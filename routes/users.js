@@ -11,6 +11,30 @@ router.get('/', function(req, res, next) {
 
 var db=new mongo.Db("Bank-customers", new mongo.Server(dbhost,dbport, {}));
 //customer signup
+/*router.post('/signup',function(req,res) {
+    db.open(function (error) {
+        db.collection("customers", function (error, collection) {
+            var num = Math.floor(Math.random() * 10000000000);
+            collection.insert({
+                CustomerName:req.query.customername,
+                SSN: req.query.ssn,
+                MobileNo: req.query.mobile,
+                EmailId: req.query.emailid,
+                Address: req.query.address,
+                Password: req.query.password,
+                AccountNo: num.toString()
+            },function (error, result) {
+                if (error) {
+                    console.log("Unable to find DB query" + error);
+                }
+                else {
+                    res.send(result);
+                }
+            });
+        });
+    });
+});*/
+
 router.post('/signup',function(req,res){
     db.open(function (error) {
         db.collection("customers", function (error, collection) {
