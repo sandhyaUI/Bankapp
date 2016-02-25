@@ -72,7 +72,7 @@ router.post('/deposit',function(req,res){
         });
     });
 });
-
+//Checking Balance
 router.get('/balance', function(req, res) {
     var account = req.query.account;
     var password =req.query.password;
